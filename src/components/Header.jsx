@@ -2,7 +2,7 @@ const Header = (props) => {
     const {setActivePage} = props;
     return (
         <>
-        <header>
+        <header className="header-main-page">
         <img src="public\assets\iteration-1\logo.svg" alt="" />
         <p>fırsatı kaçırma</p>
         <h1>KOD ACIKTIRIR</h1>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-header {
+.header-main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +19,7 @@ header {
     flex-shrink: 0;
 }
 
-header h1 {
+.header-main-page h1 {
     font-family: "Roboto Condensed";
     font-weight: 300;
     font-size: 5rem;
@@ -28,12 +28,12 @@ header h1 {
     padding: 0;
 }
 
-header img {
+.header-main-page img {
     margin: 0 auto;
     padding-top: 1.75rem;
 }
 
-header p {
+.header-main-page p {
     font-family: Satisfy;
     font-style: regular;
     font-size: 2rem;
@@ -59,14 +59,14 @@ button:hover {
     border-color: #646cff;
 }
 
-header .btn {
+.header-main-page .btn {
     border-radius: 50px;
     background-color: #FDC913;
     color: #FFFFFF;
     border: none;
 }
 
-header .btn:hover {
+.header-main-page .btn:hover {
     color: #FDC913;
     background-color: #FFFFFF;
 }
@@ -437,10 +437,10 @@ footer a {
 }
 
 @media (max-width: 768px) {
-    header h1 {
+    .header-main-page h1 {
         font-size: 3.5rem;
     }
-    header p {
+    .header-main-page p {
         font-size: 1.5rem;
     }
     .icons {
@@ -554,16 +554,16 @@ footer a {
 }
 
 @media (max-width: 480px) {
-    header {
+    .header-main-page {
         padding: 1rem;
     }
-    header img {
+    .header-main-page img {
         width: 100%;
     }
-    header h1 {
+    .header-main-page h1 {
         font-size: 2.5rem;
     }
-    header .btn {
+    .header-main-page .btn {
         margin-top: 1.5rem;
         padding: 0.75rem 2rem;
     }

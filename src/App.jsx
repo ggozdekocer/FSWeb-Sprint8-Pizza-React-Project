@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainPizza from "./components/MainPizza";
 import NavLinks from "./components/NavLinks";
+import OrderForm from "./components/OrderForm";
 
 const App = () => {
 
@@ -18,7 +19,7 @@ const [activePage, setActivePage] = useState("Home");
     </>
     ) : (
       <>
-      <OrderForm />
+      <OrderForm setActivePage={setActivePage} />
       </>
     )}
     
