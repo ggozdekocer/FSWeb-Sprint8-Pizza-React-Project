@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import MainPizza from "./components/MainPizza";
 import NavLinks from "./components/NavLinks";
 import OrderForm from "./components/OrderForm";
+import NavLinkData from "./NavLinkData";
+
 
 const App = () => {
 
@@ -14,7 +16,7 @@ const [activePage, setActivePage] = useState("Home");
     {activePage === "Home" ? (
     <>
     <Header setActivePage={setActivePage}/>
-    <NavLinks />
+    <NavLinks NavLinkData={NavLinkData}/>
     <MainPizza />
     </>
     ) : (

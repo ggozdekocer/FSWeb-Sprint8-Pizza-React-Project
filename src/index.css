@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('public/assets/iteration-1/home-banner.png');
+    background-image: url('/assets/iteration-1/home-banner.png');
     min-height: 100vh;
     width: 100%;
     text-align: center;
@@ -93,10 +93,7 @@ body {
     margin: 0 auto;
     min-width: 320px;
     min-height: 100vh;
-}
-
-main {
-    background-color: #FAF7F2;
+    background: #FAF7F2;
 }
 
 .promo {
@@ -219,6 +216,11 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
+}
+
+.category-item.active {
+    background-color: black;
+    color: white;
 }
 
 .category-item {
@@ -357,6 +359,10 @@ footer a {
     font-weight: 300;
     font-size: 24px;
     justify-content: center;
+}
+
+.footer-menu h4 {
+    padding-bottom: 20px;
 }
 
 .footer-instagram {

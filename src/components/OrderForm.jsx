@@ -13,10 +13,10 @@ const OrderForm = (props) => {
     return (
         <div className="orderForm-container">
             <header className="orderForm-header">
-                <img src="public\assets\iteration-1\logo.svg"/>
+                <img src="/assets/iteration-1/logo.svg"/>
                <div>
                 <nav className="form-buttons">
-                    <ButtonMain onClick={()=>setActivePage("Home")} className="form-btn">Anasayfa</ButtonMain>
+                    <ButtonMain onClick={()=>setActivePage("Home")}>Anasayfa</ButtonMain>
                     <span className="form-seperate">-</span>
                     <span className="form-active">Sipariş Oluştur</span>
                 </nav>

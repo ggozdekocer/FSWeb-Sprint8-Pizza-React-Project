@@ -3,7 +3,7 @@ const Header = (props) => {
     return (
         <>
         <header className="header-main-page">
-        <img src="public\assets\iteration-1\logo.svg" alt="" />
+        <img src="/assets/iteration-1/logo.svg" alt="" />
         <p>fırsatı kaçırma</p>
         <h1>KOD ACIKTIRIR</h1>
         <h1>PİZZA, DOYURUR</h1>

@@ -1,39 +1,23 @@
+import ProductData from "../ProductsData";
+
 const Products = () => {
     return (
         <>
          <section className="products">
             <div className="product-list">
-                <div className="product-card">
-                    <img src="public/assets\iteration-2\pictures\food-1.png"/>
+                {ProductData.map((item) => (
+    <div key={item.id} className="product-card">
+        <img src={item.imgUrl} alt={item.productName} />
 
-                    <h3>Terminal Pizza</h3>
-                    <div className="product-info">
-                        <p>4.9</p>
-                        <p>(200)</p>
-                        <p className="price">₺60</p>
-                    </div>
-                </div>
+        <h3>{item.productName}</h3>
 
-                <div className="product-card">
-                    <img src="public/assets\iteration-2\pictures\food-2.png"/>
-                    <h3>Position Absolute Acı Pizza</h3>
-                    <div className="product-info">
-                        <p>4.9</p>
-                        <p>(200)</p>
-                        <p className="price">₺60</p>
-                    </div>
-
-                </div>
-
-                <div className="product-card">
-                    <img src="public/assets\iteration-2\pictures\food-3.png"/>
-                    <h3>useEffect Tavuklu Burger</h3>
-                    <div className="product-info">
-                        <p>4.9</p>
-                        <p>(200)</p>
-                        <p className="price">₺60</p>
-                    </div>
-                </div>
+        <div className="product-info">
+            <p>{item.rate}</p>
+            <p>{item.rateCount}</p>
+            <p className="price">{item.price}</p>
+        </div>
+    </div>
+))}
             </div>
         </section>
         </>

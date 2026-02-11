@@ -1,3 +1,5 @@
+import CategoriesData from "../CategoriesData";
+
 const Categories = () => {
     return (
         <>
@@ -9,35 +11,15 @@ const Categories = () => {
         <section className="categories">
             <ul className="category-list">
 
-                <li className="category-item">
-                    <img src="public/assets\iteration-2\icons\1.svg" />
-                    <p>Ramen</p>
-                </li>
-
-                <li className="category-item active">
-                    <img src="public/assets\iteration-2\icons\2.svg" />
-                    <p>Pizza</p>
-                </li>
-
-                <li className="category-item">
-                    <img src="public/assets\iteration-2\icons\3.svg" />
-                    <p>Burger</p>
-                </li>
-
-                <li className="category-item">
-                    <img src="public/assets\iteration-2\icons\4.svg" />
-                    <p>French Fries</p>
-                </li>
-
-                <li className="category-item">
-                    <img src="public/assets\iteration-2\icons\5.svg" />
-                    <p>Fast Food</p>
-                </li>
-
-                <li className="category-item">
-                    <img src="public/assets\iteration-2\icons\6.svg" />
-                    <p>Soft Drinks</p>
-                </li>
+                {CategoriesData.map((item) => (
+                        <li
+                            key={item.id}
+                            className={`category-item ${item.active ? "active" : ""}`}
+                        >
+                            <img src={item.imgUrl} alt={item.text} />
+                            <p>{item.text}</p>
+                        </li>
+                    ))}
             </ul>
         </section>
         </>
