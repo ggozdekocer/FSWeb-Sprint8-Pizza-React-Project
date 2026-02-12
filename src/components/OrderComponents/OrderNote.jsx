@@ -18,11 +18,15 @@ const TextArea = styled.textarea`
   border-radius: 6px;
 `;
 
-const OrderNote = () => {
+const OrderNote = ({ note, setNote }) => {
   return (
     <Wrapper>
       <Title>Sipariş Notu</Title>
-      <TextArea placeholder="Siparişine eklemek istediğin bir not var mı?" />
+        <TextArea 
+          placeholder="Siparişine eklemek istediğin bir not var mı?" 
+          value={note} 
+          onChange={(e) => setNote(e.target.value)} 
+        />
     </Wrapper>
   );
 };

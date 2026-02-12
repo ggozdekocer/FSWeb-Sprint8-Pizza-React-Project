@@ -15,13 +15,13 @@ const Row = styled.div`
   margin-top: 2rem;
 `;
 
-const OrderOptionsRow = () => {
+const OrderOptionsRow = ({ size, setSize, crust, setCrust }) => {
   return (
     <Container>
-      <Row>
-      <OrderSizePicker />
-      <CrustSize />
-    </Row>
+        <Row>
+          <OrderSizePicker size={size} setSize={setSize} />
+          <CrustSize crust={crust} setCrust={setCrust} />
+        </Row>
     </Container>
     
   );

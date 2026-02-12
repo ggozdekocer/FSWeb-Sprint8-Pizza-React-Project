@@ -1,15 +1,17 @@
 import { useState } from "react";
-import Footer from "./components/Footer";
+import OrderForm from "./components/OrderComponents/OrderForm";
 import Header from "./components/Header";
-import MainPizza from "./components/MainPizza";
 import NavLinks from "./components/NavLinks";
-import OrderForm from "./components/OrderForm";
+import MainPizza from "./components/MainPizza";
 import NavLinkData from "./NavLinkData";
+import Footer from "./components/Footer";
+import SuccessPage from "./components/SuccessPage";
 
 
 const App = () => {
 
 const [activePage, setActivePage] = useState("Home");
+const [orderData, setOrderData] = useState(null);
 
   return (
     <>
@@ -19,12 +21,11 @@ const [activePage, setActivePage] = useState("Home");
     <NavLinks NavLinkData={NavLinkData}/>
     <MainPizza setActivePage={setActivePage}/>
     </>
+    ) : activePage === "Form" ? (
+    <OrderForm setActivePage={setActivePage} setOrderData={setOrderData} />
     ) : (
-      <>
-      <OrderForm setActivePage={setActivePage} />
-      </>
+    <SuccessPage setActivePage={setActivePage} orderData={orderData} />
     )}
-    
     <Footer />
     </>
   );

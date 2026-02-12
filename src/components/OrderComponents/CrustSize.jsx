@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -15,9 +14,7 @@ const Select = styled.select`
   width: 100%;
 `;
 
-const CrustSize = () => {
-  const [crust, setCrust] = useState("");
-
+const CrustSize = ({ crust, setCrust }) => {
   return (
     <Wrapper>
       <Title>Hamur Seç *</Title>
@@ -30,7 +27,7 @@ const CrustSize = () => {
         <option value="" disabled>
           Hamur Kalınlığı Seç
         </option>
-        <option value="thin">İnce</option>
+        <option value="thin">Süpper İnce</option>
         <option value="medium">Orta</option>
         <option value="thick">Kalın</option>
       </Select>
