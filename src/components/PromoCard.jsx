@@ -1,4 +1,5 @@
-const PromoCard = () => {
+const PromoCard = (props) => {
+    const {setActivePage} = props;
     return (
         <>
         <section className="promo">
@@ -9,7 +10,7 @@ const PromoCard = () => {
                     <h2>Özel</h2>
                     <h2>Lezzetus</h2>
                     <p>Position: Absolute Acı Burger</p>
-                    <button className="promo-btn">SİPARİŞ VER</button>
+                    <button onClick={()=>setActivePage("Form")} className="promo-btn">SİPARİŞ VER</button>
                 </div>
             </div>
             
@@ -20,7 +21,7 @@ const PromoCard = () => {
                     <div className="promo-content">
                         <h2>Hackathlon</h2>
                         <h2>Burger Menü</h2>
-                        <button className="promo-btn">SİPARİŞ VER</button>
+                        <button onClick={()=>setActivePage("Form")} className="promo-btn">SİPARİŞ VER</button>
                     </div>
                 </div>
 
@@ -30,7 +31,7 @@ const PromoCard = () => {
                     <div className="promo-content" style={{color: "black"}}>
                         <h2><span style={{color: "#d62828"}}>Çoooook</span> hızlı</h2>
                         <h2>npm gibi kurye</h2>
-                        <button className="promo-btn">SİPARİŞ VER</button>
+                        <button  onClick={()=>setActivePage("Form")} className="promo-btn">SİPARİŞ VER</button>
                     </div>
                 </div>
             </div>

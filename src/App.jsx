@@ -17,7 +17,7 @@ const [activePage, setActivePage] = useState("Home");
     <>
     <Header setActivePage={setActivePage}/>
     <NavLinks NavLinkData={NavLinkData}/>
-    <MainPizza />
+    <MainPizza setActivePage={setActivePage}/>
     </>
     ) : (
       <>
