@@ -55,6 +55,10 @@ button {
     transition: border-color 0.25s;
 }
 
+button:focus {
+    outline: none;
+}
+
 button:hover {
     border-color: #646cff;
 }
@@ -64,6 +68,10 @@ button:hover {
     background-color: #FDC913;
     color: #FFFFFF;
     border: none;
+}
+
+.header-main-page .btn:focus {
+    outline: none;
 }
 
 .header-main-page .btn:hover {
@@ -176,6 +184,10 @@ body {
 
 .promo-btn:hover {
     opacity: 0.85;
+}
+
+.promo-btn:focus {
+    outline: none;
 }
 
 h1 {

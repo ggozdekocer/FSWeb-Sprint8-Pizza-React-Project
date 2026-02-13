@@ -11,7 +11,8 @@ import SuccessPage from "./components/SuccessPage";
 const App = () => {
 
 const [activePage, setActivePage] = useState("Home");
-const [orderData, setOrderData] = useState(null);
+const [orderData, setOrderData] = useState({});
+
 
   return (
     <>
@@ -22,7 +23,7 @@ const [orderData, setOrderData] = useState(null);
     <MainPizza setActivePage={setActivePage}/>
     </>
     ) : activePage === "Form" ? (
-    <OrderForm setActivePage={setActivePage} setOrderData={setOrderData} />
+    <OrderForm setActivePage={setActivePage} setOrderData={setOrderData}  orderData={orderData} />
     ) : (
     <SuccessPage setActivePage={setActivePage} orderData={orderData} />
     )}

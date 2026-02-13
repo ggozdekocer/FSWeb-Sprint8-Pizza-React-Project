@@ -3,18 +3,33 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 50%;
 `;
 
 const Button = styled.button`
-  background: #f7c200;
+  background: #FDC913;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.2rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #ffd966;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;
 
 const Count = styled.div`
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #eee;
+  padding: 1rem 1.2rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 10px;
 `;
 
 const OrderCount = ({ count, setCount }) => {

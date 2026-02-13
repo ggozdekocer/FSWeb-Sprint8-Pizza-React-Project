@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  align-items: center;
   font-family: Barlow;
+  background: #FAF7F2;
 `;
 
 const Title = styled.h1`
@@ -42,9 +42,47 @@ const Description = styled.p`
   font-size: 1.125rem;
 `;
 
-const PizzaDetails = () => {
+const ContainerSection = styled.section`
+width: 30%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 40%;
+padding-bottom: 70px;
+`
+const ButtonMain = styled.a`
+background: none;
+border: none;
+cursor: pointer;
+font-family:Barlow;
+font-size: 1.16rem;
+font-weight: 300;
+ &:focus {
+    outline: none;
+  }
+    
+`
+
+const NavDiv = styled.div`
+font-family:Barlow;
+display: flex;
+justify-content: flex-start;
+padding-bottom: 10px;
+`
+
+const PizzaDetails = (props) => {
+  const {setActivePage} = props;
   return (
     <Container>
+      <ContainerSection>
+      <img style={{paddingBottom: "90px"}}  src="./assets/iteration-2/pictures/form-banner.png"/>
+      <NavDiv>
+                <nav style={{fontSize: "1.2rem"}} className="form-buttons">
+                    <ButtonMain onClick={()=>setActivePage("Home")}>Anasayfa</ButtonMain>
+                    <span style={{paddingLeft: "8px",fontWeight: "500", color: "#CE2829"}} className="form-seperate">-</span>
+                    <span style={{fontWeight: "500", color: "#CE2829"}} className="form-active"> Sipariş Oluştur</span>
+                </nav>
+                </NavDiv> 
       <Title>Position Absolute Acı Pizza</Title>
 
       <PriceRow>
@@ -61,6 +99,7 @@ const PizzaDetails = () => {
         düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli
         lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.
       </Description>
+      </ContainerSection>
     </Container>
   );
 };
