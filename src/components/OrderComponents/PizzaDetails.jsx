@@ -43,12 +43,23 @@ const Description = styled.p`
 `;
 
 const ContainerSection = styled.section`
-width: 30%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-height: 40%;
-padding-bottom: 40px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40%;
+  padding-bottom: 40px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0 1rem 0;
+    height: auto;
+  }
 `
 const ButtonMain = styled.a`
 background: none;
@@ -57,7 +68,8 @@ cursor: pointer;
 font-family:Barlow;
 font-size: 1.16rem;
 font-weight: 300;
- &:focus {
+
+&:focus {
     outline: none;
   }
     
@@ -75,7 +87,7 @@ const PizzaDetails = (props) => {
   return (
     <Container>
       <ContainerSection>
-      <img style={{paddingBottom: "90px"}}  src="./assets/iteration-2/pictures/form-banner.png"/>
+      <img className="form-banner-img" style={{paddingBottom: "90px"}} src="./assets/iteration-2/pictures/form-banner.png" alt="Position Absolute Acı Pizza" />
       <NavDiv>
                 <nav style={{fontSize: "1.2rem"}} className="form-buttons">
                     <ButtonMain onClick={()=>setActivePage("Home")}>Anasayfa</ButtonMain>

@@ -456,7 +456,20 @@ footer a {
     cursor: pointer;
 }
 
+/* Order form mobile styles */
+.orderForm-container {
+  width: 100%;
+}
+
+.form-banner-img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 768px) {
+  .form-banner-img {
+    padding-bottom: 2rem !important;
+  }
     .header-main-page h1 {
         font-size: 3.5rem;
     }
@@ -574,6 +587,9 @@ footer a {
 }
 
 @media (max-width: 480px) {
+    .form-banner-img {
+        padding-bottom: 1rem !important;
+    }
     .header-main-page {
         padding: 1rem;
     }

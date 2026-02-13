@@ -8,11 +8,29 @@ const Container = styled.div`
   width: 30%;
   align-items: normal;
   font-family: Barlow;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 const Row = styled.div`
   display: flex;
   gap: 3rem;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 const OrderOptionsRow = ({ size, setSize, crust, setCrust }) => {

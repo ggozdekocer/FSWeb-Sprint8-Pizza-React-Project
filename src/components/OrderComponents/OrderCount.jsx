@@ -4,6 +4,11 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 50%;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const Button = styled.button`
@@ -23,6 +28,11 @@ const Button = styled.button`
     outline: none;
     box-shadow: none;
   }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+  }
 `;
 
 const Count = styled.div`
@@ -30,6 +40,11 @@ const Count = styled.div`
   border: 1px solid #ddd;
   background: white;
   border-radius: 10px;
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
 `;
 
 const OrderCount = ({ count, setCount }) => {

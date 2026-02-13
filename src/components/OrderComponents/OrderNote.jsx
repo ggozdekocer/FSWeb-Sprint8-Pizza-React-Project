@@ -5,11 +5,26 @@ const Wrapper = styled.div`
   width: 30%;
   font-family: Barlow;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
 `;
 
 const Title = styled.h3`
   font-weight: 600;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -27,6 +42,12 @@ const TextArea = styled.textarea`
   &:focus {
     outline: none;
     border-color: #FDC913;
+  }
+
+  @media (max-width: 480px) {
+    height: 60px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 `;
 

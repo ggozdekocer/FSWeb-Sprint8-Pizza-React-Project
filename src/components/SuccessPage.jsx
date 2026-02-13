@@ -8,6 +8,16 @@ const SuccessContainer = styled.div`
   padding: 3rem 2rem 4rem;
   color: white;
   font-family: Barlow;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem 2rem;
+  }
 `;
 
 const LogoSection = styled.div`
@@ -15,6 +25,14 @@ const LogoSection = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 4rem;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+  }
 `;
 
 const Tagline = styled.p`
@@ -22,6 +40,14 @@ const Tagline = styled.p`
   font-size: 2.5rem;
   color: #fdc913;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -30,6 +56,16 @@ const Title = styled.h1`
   font-weight: 200;
   letter-spacing: 0.1em;
   margin: 5px auto;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.25rem;
+    letter-spacing: 0.05em;
+  }
 `;
 
 const Divider = styled.hr`
@@ -37,6 +73,15 @@ const Divider = styled.hr`
   border: none;
   border-top: 1px solid #FAF7F2;
   margin: 1.5rem auto;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    margin: 1rem auto;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -45,6 +90,16 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   width: 30%;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    gap: 1.5rem;
+  }
 `;
 
 const OrderDetails = styled.div`
@@ -52,6 +107,7 @@ const OrderDetails = styled.div`
   flex-direction: column;
   display: flex;
   align-items: flex-start;
+  width: 100%;
 `;
 
 const PizzaName = styled.h2`
@@ -60,12 +116,23 @@ const PizzaName = styled.h2`
   margin-bottom: 3rem;
   margin-top: 2rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
 `;
 
 const DetailRow = styled.div`
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const DetailLabel = styled.span`
@@ -78,6 +145,7 @@ const DetailValue = styled.span`
   color: #FFFFFF;
   font-weight: 450;
   font-family: Barlow;
+  word-break: break-word;
 `;
 
 const SummaryBox = styled.div`
@@ -88,6 +156,16 @@ const SummaryBox = styled.div`
   border: 1px solid #FAF7F2;
   font-family: Barlow;
   font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
 `;
 
 const SummaryTitle = styled.h3`
@@ -95,6 +173,11 @@ const SummaryTitle = styled.h3`
   font-weight: 300;
   margin-bottom: 1rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
 `;
 
 const SummaryRow = styled.div`
@@ -103,12 +186,28 @@ const SummaryRow = styled.div`
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const SummaryTotal = styled(SummaryRow)`
   margin-top: 0.75rem;
   font-size: 1.5rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const LogoImg = styled.img`
+  height: 4rem;
+
+  @media (max-width: 480px) {
+    height: 3rem;
+  }
 `;
 
 const HomeButton = styled.button`
@@ -132,15 +231,22 @@ const HomeButton = styled.button`
     outline: none;
     box-shadow: none;
   }
+
+  @media (max-width: 480px) {
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.5rem;
+    font-size: 1.1rem;
+  }
 `;
 
 
 const SuccessPage = ({ setActivePage, orderData }) => {
+  const data = orderData || {};
 
   return (
     <SuccessContainer>
       <LogoSection>
-        <img src="/assets/iteration-1/logo.svg" alt="Teknolojik Yemekler" style={{ height: "4rem" }} />
+        <LogoImg src="/assets/iteration-1/logo.svg" alt="Teknolojik Yemekler" />
         <Tagline>lezzetin yolda</Tagline>
       </LogoSection>
 
@@ -149,22 +255,22 @@ const SuccessPage = ({ setActivePage, orderData }) => {
 
       <ContentWrapper>
         <OrderDetails>
-          <PizzaName>{orderData.pizzaName }</PizzaName>
+          <PizzaName>{data.pizzaName || "Position Absolute Acı Pizza"}</PizzaName>
             <DetailRow>
               <DetailLabel>Boyut:</DetailLabel>
-              <DetailValue>{orderData.size}</DetailValue>
+              <DetailValue>{data.size || data.boyut}</DetailValue>
             </DetailRow>
             <DetailRow>
               <DetailLabel>Hamur:</DetailLabel>
-              <DetailValue>{orderData.crust}</DetailValue>
+              <DetailValue>{data.crust || data.hamur}</DetailValue>
             </DetailRow>
             <DetailRow>
               <DetailLabel>Ek Malzemeler:</DetailLabel>
-              <DetailValue>{orderData.extras.join(", ")}</DetailValue>
+              <DetailValue>{(data.extras || data.malzemeler || []).join(", ")}</DetailValue>
             </DetailRow>
             <DetailRow>
               <DetailLabel>Notlar:</DetailLabel>
-              <DetailValue>{orderData.note}</DetailValue>
+              <DetailValue>{data.note || data.ozel || "-"}</DetailValue>
             </DetailRow>
         </OrderDetails>
 
@@ -172,11 +278,11 @@ const SuccessPage = ({ setActivePage, orderData }) => {
           <SummaryTitle>Sipariş Toplamı</SummaryTitle>
           <SummaryRow>
             <span>Seçimler</span>
-            <span>{(orderData.selectionsTotal).toFixed(2)}₺</span>
+            <span>{(data.selectionsTotal ?? data.extrasTotal ?? 0).toFixed(2)}₺</span>
           </SummaryRow>
           <SummaryTotal>
             <span>Toplam</span>
-            <span>{(orderData.grandTotal).toFixed(2)}₺</span>
+            <span>{(data.grandTotal ?? data.toplam ?? 0).toFixed(2)}₺</span>
           </SummaryTotal>
         </SummaryBox>
       </ContentWrapper>

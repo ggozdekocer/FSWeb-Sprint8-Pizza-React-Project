@@ -12,6 +12,10 @@ const Title = styled.h3`
 const OptionsWrapper = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+  }
 `;
 
 const Option = styled.label`
@@ -27,6 +31,12 @@ const Option = styled.label`
   border-radius: 50%;
   background-color: #eee;
   transition: all 0.2s;
+
+  @media (max-width: 480px) {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+  }
 
   input {
     position: absolute;

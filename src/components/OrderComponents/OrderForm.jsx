@@ -13,12 +13,32 @@ const WrapperFrom = styled.div`
   align-items: center;
   flex-direction: column;
   font-family: Barlow;
+  width: 100%;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
 `;
 
 const NameWrapper = styled.div`
   width: 30%;
   margin-top: 2rem;
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 const NameLabel = styled.label`
@@ -47,7 +67,7 @@ const ErrorText = styled.div`
   margin-top: 0.4rem;
 `;
 
-const OrderForm = ({ setActivePage }) => {
+const OrderForm = ({ setActivePage, setOrderData }) => {
   const [count, setCount] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [size, setSize] = useState("");
@@ -59,46 +79,51 @@ const OrderForm = ({ setActivePage }) => {
   const extrasTotal = selectedExtras.length * 5.0;
   const grandTotal = (85.5 + extrasTotal) * count;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!name || name.trim().length < 3) {
-      setNameError(true);
-      return;
-    }
+  if (!name || name.trim().length < 3) {
+    setNameError(true);
+    return;
+  }
 
-    setNameError(false);
+  setNameError(false);
 
-    const payload = {
-      isim: name,
-      boyut: size,
-      hamur: crust,
-      malzemeler: selectedExtras,
-      ozel: note,
-      adet: count,
-      toplam: grandTotal,
-    };
-
-    try {
-      const response = await axios.post(
-        "https://reqres.in/api/pizza",
-        payload,
-        {
-          headers: {
-            "x-api-key": "reqres_6dba0a35b0124d7995308970b8630e17",
-          },
-        }
-      );
-
-      console.log("Sipariş Özeti:");
-      console.log(response.data);
-
-      setActivePage("Success");
-    } catch (error) {
-      console.error("API Hatası:", error);
-    }
+  const payload = {
+    isim: name,
+    boyut: size,
+    hamur: crust,
+    malzemeler: selectedExtras,
+    ozel: note,
+    adet: count,
+    toplam: grandTotal,
   };
 
+  axios
+    .post("https://reqres.in/api/pizza", payload, {
+      headers: {
+        "x-api-key": "reqres_6dba0a35b0124d7995308970b8630e17",
+      },
+    })
+    .then((res) => {
+      console.log("Sipariş başarıyla gönderildi. API Yanıtı:", res.data);
+      setOrderData({
+        ...payload,
+        pizzaName: "Position Absolute Acı Pizza",
+        size: payload.boyut,
+        crust: payload.hamur,
+        extras: payload.malzemeler,
+        note: payload.ozel,
+        selectionsTotal: extrasTotal,
+        grandTotal,
+      });
+      setActivePage("Success");
+    })
+    .catch((err) => {
+      console.error("Sipariş hatası:", err);
+      alert("Siparişiniz gönderilirken bir hata oluştu.");
+    });
+};
   const isFormInvalid =
     selectedExtras.length < 4 ||
     selectedExtras.length > 10 ||
@@ -111,7 +136,7 @@ const OrderForm = ({ setActivePage }) => {
       <FormHeader />
       <form onSubmit={handleSubmit}>
         <WrapperFrom>
-          <PizzaDetails />
+          <PizzaDetails setActivePage={setActivePage}/>
           <OrderOptionsRow
             size={size}
             setSize={setSize}

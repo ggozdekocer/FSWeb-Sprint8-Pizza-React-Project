@@ -8,18 +8,32 @@ const Wrapper = styled.div`
   transition: all 0.2s;
   border: 1px solid #D9D9D9;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    width: 100%;
+  }
 `;
 
 const Title = styled.h3`
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const Total = styled.div`
@@ -29,6 +43,10 @@ const Total = styled.div`
   font-weight: bold;
   margin-top: 0.5rem;
   font-family: Barlow;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const OrderButton = styled.button`
@@ -50,6 +68,12 @@ const OrderButton = styled.button`
   &:focus {
     outline: none;
     box-shadow: none;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.85rem;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
   }
 `;
 

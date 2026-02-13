@@ -6,16 +6,34 @@ const Wrapper = styled.div`
   margin-top: 2.5rem;
   width: 30%;
   font-family: Barlow;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
 `;
 
 const Title = styled.h3`
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const SubText = styled.p`
   font-size: 0.875rem;
   opacity: 0.7;
   margin-top: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -23,6 +41,17 @@ const Grid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem 2rem;
   margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
 `;
 
 const Option = styled.label`
@@ -34,6 +63,12 @@ const Option = styled.label`
   cursor: pointer;
   font-size: 22px;
   user-select: none;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding-left: 45px;
+    margin-bottom: 10px;
+  }
   
 
   input {
