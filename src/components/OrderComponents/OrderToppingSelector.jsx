@@ -110,7 +110,7 @@ const OrderToppingSelector = ({ selectedExtras, setSelectedExtras }) => {
 
   return (
     <Wrapper>
-      <Title>Ek Malzemeler</Title>
+      <Title>Ek Malzemeler *</Title>
       <SubText>En az 4, en fazla 10 malzeme seçebilirsiniz. 5₺</SubText>
       <Grid>
         {toppings.map((item, index) => (

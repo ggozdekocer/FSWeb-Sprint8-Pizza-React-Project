@@ -9,17 +9,25 @@ const Wrapper = styled.div`
 
 const Title = styled.h3`
   font-weight: 600;
+  font-family: Barlow;
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
-  margin-top: 0.75rem;
+  height: 70px;
   padding: 1rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #FAF7F2;
-  max-width: 100%;
-  min-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  background-color: #f3f1ed;
+  resize: none;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-family: Barlow;
+
+  &:focus {
+    outline: none;
+    border-color: #FDC913;
+  }
 `;
 
 

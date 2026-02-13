@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const SuccessContainer = styled.div`
   background: #ce2829;
-  min-height: calc(100vh - 50vh);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,91 +14,101 @@ const LogoSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  gap: 4rem;
 `;
 
 const Tagline = styled.p`
   font-family: Satisfy;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #fdc913;
-  margin: 0.5rem 0 0;
+  margin: 0 auto;
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 5rem;
+  font-family: Roboto Condensed;
+  font-weight: 200;
   letter-spacing: 0.1em;
-  margin: 2rem 0 0;
+  margin: 5px auto;
 `;
 
 const Divider = styled.hr`
-  width: 200px;
+  width: 580px;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 1.5rem 0 2rem;
+  border-top: 1px solid #FAF7F2;
+  margin: 1.5rem auto;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   gap: 4rem;
-  align-items: flex-start;
-  max-width: 900px;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
 `;
 
 const OrderDetails = styled.div`
-  flex: 1;
-  min-width: 280px;
+  font-family: Barlow;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
 `;
 
 const PizzaName = styled.h2`
   font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  font-family: Barlow;
 `;
 
 const DetailRow = styled.div`
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-family: Barlow;
 `;
 
 const DetailLabel = styled.span`
-  font-weight: 600;
+  font-weight: 300;
   margin-right: 0.5rem;
+  font-family: Barlow;
 `;
 
 const DetailValue = styled.span`
-  color: #ff6b6b;
-  font-weight: 500;
+  color: #FFFFFF;
+  font-weight: 450;
+  font-family: Barlow;
 `;
 
 const SummaryBox = styled.div`
-  background: white;
-  color: #292929;
-  padding: 1.5rem;
-  width: 250px;
+  color: #FFFFFF;
+  padding: 4rem;
+  width: 80%;
   border-radius: 4px;
+  border: 1px solid #FAF7F2;
+  font-family: Barlow;
+  font-size: 1.5rem;
 `;
 
 const SummaryTitle = styled.h3`
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 300;
   margin-bottom: 1rem;
+  font-family: Barlow;
 `;
 
 const SummaryRow = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-family: Barlow;
 `;
 
 const SummaryTotal = styled(SummaryRow)`
-  color: #ce2829;
-  font-weight: bold;
   margin-top: 0.75rem;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
+  font-family: Barlow;
 `;
 
 const HomeButton = styled.button`
@@ -110,13 +119,18 @@ const HomeButton = styled.button`
   border: none;
   border-radius: 50px;
   font-family: Barlow;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 450;
   cursor: pointer;
   transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.9;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
   }
 `;
 
@@ -136,22 +150,22 @@ const SuccessPage = ({ setActivePage, orderData }) => {
       <ContentWrapper>
         <OrderDetails>
           <PizzaName>{orderData.pizzaName }</PizzaName>
-          <DetailRow>
-            <DetailLabel>Boyut:</DetailLabel>
-            <DetailValue>{orderData.size}</DetailValue>
-          </DetailRow>
-          <DetailRow>
-            <DetailLabel>Hamur:</DetailLabel>
-            <DetailValue>{orderData.crust}</DetailValue>
-          </DetailRow>
-          <DetailRow>
-            <DetailLabel>Ek Malzemeler:</DetailLabel>
-            <DetailValue>{orderData.extras.join(", ")}</DetailValue>
-          </DetailRow>
-          <DetailRow>
-            <DetailLabel>Notlar:</DetailLabel>
-            <DetailValue>{orderData.note}</DetailValue>
-          </DetailRow>
+            <DetailRow>
+              <DetailLabel>Boyut:</DetailLabel>
+              <DetailValue>{orderData.size}</DetailValue>
+            </DetailRow>
+            <DetailRow>
+              <DetailLabel>Hamur:</DetailLabel>
+              <DetailValue>{orderData.crust}</DetailValue>
+            </DetailRow>
+            <DetailRow>
+              <DetailLabel>Ek Malzemeler:</DetailLabel>
+              <DetailValue>{orderData.extras.join(", ")}</DetailValue>
+            </DetailRow>
+            <DetailRow>
+              <DetailLabel>Notlar:</DetailLabel>
+              <DetailValue>{orderData.note}</DetailValue>
+            </DetailRow>
         </OrderDetails>
 
         <SummaryBox>

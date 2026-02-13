@@ -48,7 +48,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 height: 40%;
-padding-bottom: 70px;
+padding-bottom: 40px;
 `
 const ButtonMain = styled.a`
 background: none;

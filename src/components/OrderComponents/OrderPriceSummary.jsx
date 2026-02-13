@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background: #ece7df;
+  background: #FAF7F2;
   border-radius: 12px;
   padding: 3rem;
   width: 90%;
@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  font-family: Barlow;
 `;
 
 const Row = styled.div`
@@ -27,6 +28,7 @@ const Total = styled.div`
   color: #d62828;
   font-weight: bold;
   margin-top: 0.5rem;
+  font-family: Barlow;
 `;
 
 const OrderButton = styled.button`
@@ -39,6 +41,7 @@ const OrderButton = styled.button`
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.2s;
+  font-family: Barlow;
 
   &:hover {
     background-color: #ffd966;
